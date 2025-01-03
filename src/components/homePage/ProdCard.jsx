@@ -12,6 +12,8 @@ const ProdCard = ({prod}) => {
 
   const handleDetail = () => {
     navigate(`product/${prod.id}`)
+    console.log(prod.description);
+    
   }
 
   const handleAddCart = () => {

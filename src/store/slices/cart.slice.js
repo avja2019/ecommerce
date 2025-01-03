@@ -9,10 +9,18 @@ const urlBase = 'https://e-commerce-api-v2.academlo.tech/api/v1';
         reducers: {
             setCart: (_state, action) => action.payload,
             addCart: (state, {payload}) => {state.push(payload)},
+            delCart: (state,{payload})=> state.filter(
+                (prod) =>prod.id!==payload
+            ),
+            updCart: (state, {payload})=> {
+                const {id, quantity} = payload;
+                return state.map((prod) => prod.id === id ?
+                        {...prod, quantity} : prod);
+            },
         }
     } );
 
-    export const {setCart, addCart} = cart.actions;
+    export const {setCart, addCart, delCart, updCart} = cart.actions;
 
     export default cart.reducer;
 
@@ -36,3 +44,24 @@ const urlBase = 'https://e-commerce-api-v2.academlo.tech/api/v1';
             })
             .catch(err => console.log(err))
     }
+
+    export const deleteProductThunk = (id) => (dispatch) => {
+        const url = `${urlBase}/cart/${id}`;
+        axios.delete(url,bearerToken())
+            .then(() => { 
+                dispatch(delCart(id))
+                console.log('delete success');
+            })
+            .catch(err => console.log(err));
+    }
+
+    export const updateProductThunk = (id, data) => (dispatch) =>  
+    {
+        const url = `${urlBase}/cart/${id}`;
+        axios.put(url,data, bearerToken())
+            .then(res => {
+                dispatch(updCart(res.data))
+                console.log(res.data);
+            })
+            .catch(err => console.log())
+    }    
