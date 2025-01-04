@@ -78,11 +78,16 @@
   */
 
   .itemcart {
+    width: 250px;
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 20px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-rows: 1fr 2fr 1fr;
     align-items: center;/*centrado vertical*/
     justify-items: center;/*centrado horizontal*/
+    gap: 10px;
   }
 
   .itemcart_title {
@@ -90,4 +95,11 @@
   }
   .itemcart_total {
     grid-column: span 3;
+  }
+  .itemcart_buttons > span {
+    padding: 0 10PX;
+  }
+
+  .itemcart_buttons {
+    display: flex;
   }
