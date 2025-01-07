@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import './styles/filterPrice.css'
 
 const FilterPrice = ({setinputPrice}) => {
 
@@ -17,7 +18,7 @@ const FilterPrice = ({setinputPrice}) => {
     
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
+    <form className='filtePrice' onSubmit={handleSubmit(submit)}>
         <div>
             <label htmlFor="min">Min</label>
             <input {...register('min')} id='min' type="text" />

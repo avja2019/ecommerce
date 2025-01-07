@@ -15,6 +15,7 @@ const HomePage = () => {
     max: Infinity,
   });
   
+  const [menu, setMenu] = useState(false);
   const products = useSelector((store) => store.products);
 
   const dispatch = useDispatch();
@@ -37,15 +38,16 @@ const HomePage = () => {
     const category = categoryValue === '' ? true : prod.categoryId === +categoryValue;
     return name && price && category;
   }
+
+  const handleMenu = () => {
+    setMenu(!menu)
+  }
   
   return (
     <div className='homepage'>
       
-      <div className='home__filters'>
-        <div>
-          <input ref={textInput} onChange={handleChange} type="text" />
-          <button>🔍</button>
-        </div>
+      <div className={`home__filters ${menu && 'active'}`}>
+        <button onClick={handleMenu}>X</button>
         <FilterPrice
           setinputPrice = {setinputPrice}
         />
@@ -53,6 +55,11 @@ const HomePage = () => {
           setCategoryValue = {setCategoryValue}
         />
       </div>
+      <div>
+          <input ref={textInput} onChange={handleChange} type="text" />
+          <button>🔍</button>
+      </div>
+      <button className={menu && 'active'} onClick={handleMenu}>Menu</button>
       <div className='homepage__container'>
         {
           products?.filter(cbFilter).map((prod) => 
