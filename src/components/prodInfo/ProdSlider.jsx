@@ -7,7 +7,8 @@ const ProdSlider = ({product}) => {
 
   console.log(product);
   return (
-    <Splide
+    <div>ProdSlider</div>
+    /*<Splide
       options={ {
         rewind: true,
         gap   : '1rem',
@@ -23,7 +24,7 @@ const ProdSlider = ({product}) => {
         }
 
       
-      </Splide>
+      </Splide>*/
   )
 }
 
