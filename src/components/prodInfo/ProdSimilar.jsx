@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-const ProdSimilar = () => {
+const ProdSimilar = ({product}) => {
   return (
     <div>ProdSimilar</div>
   )
