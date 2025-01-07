@@ -3,7 +3,7 @@ import React from 'react'
 
 const ProdSimilar = ({product}) => {
   return (
-    <div>ProdSimilar</div>
+    <div>ProdSimilar 2</div>
   )
 }
 
