@@ -5,7 +5,7 @@ import './styles/prodSlider.css'
 
 const ProdSlider = ({product}) => {
 
-  console.log(product);
+  console.log("Product:", product);
   return (
     /*<div>ProdSlider</div>*/
     <Splide
@@ -24,7 +24,7 @@ const ProdSlider = ({product}) => {
         }
 
       
-      </Splide>
+    </Splide>
   )
 }
 
