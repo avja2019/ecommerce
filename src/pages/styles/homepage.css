@@ -19,7 +19,7 @@
     
 }
 
-.home__filters > button {
+.home__filters > button:first-child {
     align-self: self-end;
     display: none;
 }
@@ -37,6 +37,7 @@
 
 @media (width < 899px) {
     .home__filters {
+        z-index: 10;
         width: 250px;
         left: 100%;
         transition: left .5s;
@@ -50,7 +51,7 @@
         /* left: 60%; */
         transition: left .5s;
     }
-    .home__filters > button {
+    .home__filters > button:first-child {
         display: inline-block;
     }
     .homepage__container {

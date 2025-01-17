@@ -6,8 +6,54 @@
     flex-direction: column;
     align-items: center;
 }
+.prodcard__img {
+    cursor: pointer;
+    position: relative;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prodcard__img img:last-child{
+    position: absolute;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.prodcard__img img:first-child {
+    opacity: 1;
+    transition: opacity .5s;
+}
+.prodcard__img:hover img:first-child {
+    opacity: 0;
+    transition: opacity .5s;
+}
+.prodcard__img:hover img:last-child {
+    opacity: 1;
+    transition: opacity .5s;
+}
 .prodcard__div {
     width: 100%;
+}
+.prodcard__list{
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+.prodcard__item{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 5px;
+}
+.prodcard__item span:last-child{
+    padding-left: 20px;
+}
+.prodcard__item span:first-child{
+    color: gray;
 }
 .prodcard__buttons {
     padding-bottom: 20px;

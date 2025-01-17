@@ -5,6 +5,7 @@ import ProdCard from '../components/homePage/ProdCard';
 import './styles/homepage.css';
 import FilterPrice from '../components/homePage/FilterPrice';
 import FilterSelect from '../components/homePage/FilterSelect';
+const body = document.querySelector('body');
 
 const HomePage = () => {
 
@@ -42,6 +43,10 @@ const HomePage = () => {
   const handleMenu = () => {
     setMenu(!menu)
   }
+
+  const handleMode = () => {
+    body.classList.toggle('dark')
+  }
   
   return (
     <div className='homepage'>
@@ -54,6 +59,7 @@ const HomePage = () => {
         <FilterSelect 
           setCategoryValue = {setCategoryValue}
         />
+        <button onClick={handleMode}>Change mode</button>
       </div>
       <div>
           <input ref={textInput} onChange={handleChange} type="text" />

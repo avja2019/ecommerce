@@ -5,7 +5,7 @@ import './styles/prodSlider.css'
 
 const ProdSlider = ({product}) => {
 
-  console.log("Product:", product);
+  //console.log("Product:", product);
   return (
     /*<div>ProdSlider</div>*/
     <Splide

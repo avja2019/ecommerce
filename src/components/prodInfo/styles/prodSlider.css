@@ -2,7 +2,9 @@
 .splide {
     height: 300px; 
     min-width: 250px;
-    max-width: 400px;
+    max-width: 540px;
+    gap: 10px;
+    top: 20px;
 }
 .splide__slide  {
     height: 275px;
